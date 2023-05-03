@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "378772982506",
+    "project_id": "tiedup-f930f",
+    "storage_bucket": "tiedup-f930f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378772982506:android:1a90a13508ca8f43562593",
+        "android_client_info": {
+          "package_name": "com.example.tiedup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378772982506-vkalu9svj43lm17a9188ttl3l4u6hnlm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJIpHVaWS8Zq_fB2VKWEh2VOncuyMckDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378772982506-vkalu9svj43lm17a9188ttl3l4u6hnlm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

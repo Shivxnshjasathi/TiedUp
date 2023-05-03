@@ -27,10 +27,6 @@ Widget ItemCard(int id, int price, String productDescription,
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
-
-
-
                   Text(
                     productName,
                     style: GoogleFonts.alata(

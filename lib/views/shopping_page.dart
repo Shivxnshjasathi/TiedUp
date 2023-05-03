@@ -1,5 +1,4 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,10 +8,21 @@ import 'package:tiedup/controllers/shopping_controller.dart';
 
 import '../const/colors.dart';
 
-class ShoppingPage extends StatelessWidget {
+class ShoppingPage extends StatefulWidget {
+  @override
+  State<ShoppingPage> createState() => _ShoppingPageState();
+}
+
+class _ShoppingPageState extends State<ShoppingPage> {
   final shoppingController = Get.put(ShoppingController());
+
   final cartController = Get.put(CartController());
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +55,9 @@ class ShoppingPage extends StatelessWidget {
                                           color: Color(0xfff2ecec),
                                           borderRadius:
                                               BorderRadius.circular(40)),
+                                      child: ClipRRect(
+                                           borderRadius: BorderRadius.circular(40),
+                                          child: Image.network('${controller.products[index].productImage}',fit: BoxFit.cover)),
                                     )
                                   ],
                                 ),
