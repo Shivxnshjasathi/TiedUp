@@ -1,6 +1,6 @@
 import 'package:get/state_manager.dart';
 
-class Product {
+class notesProduct {
   final String sellerno;
   final String productName;
   final String productImage;
@@ -9,7 +9,7 @@ class Product {
   final String tag;
 
 
-  Product({
+  notesProduct({
     required this.sellerno,
     required this.productName,
     required this.productImage,
@@ -18,18 +18,9 @@ class Product {
     required this.tag,
   });
 
-  Map<String,dynamic> toJson()=>
-      {
-        'price': price,
-        'productDescription': productDescription,
-        'productImage': productImage,
-        'productName': productName,
-        'sellerno': sellerno,
-        'tag': tag,
-      };
 
-  static Product fromJson(Map<String,dynamic> json)=>
-      Product(
+  static notesProduct fromJson(Map<String,dynamic> json)=>
+      notesProduct(
         price: double.parse(json['price'].toString()),
         productDescription: json['productDescription'].toString(),
         productImage: json['productImage'].toString(),

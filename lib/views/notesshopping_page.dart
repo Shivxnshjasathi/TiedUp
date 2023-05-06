@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tiedup/const/text_styles.dart';
+import 'package:tiedup/controllers/book_shopping_controller.dart';
 import 'package:tiedup/controllers/cart_controller.dart';
-import 'package:tiedup/controllers/shopping_controller.dart';
+import 'package:tiedup/controllers/notes_shoping_controller.dart';
+
 
 import '../const/colors.dart';
 
-class ShoppingPage extends StatefulWidget {
+class notesShoppingPage extends StatefulWidget {
   @override
-  State<ShoppingPage> createState() => _ShoppingPageState();
+  State<notesShoppingPage> createState() => _notesShoppingPageState();
 }
 
-class _ShoppingPageState extends State<ShoppingPage> {
-  final shoppingController = Get.put(ShoppingController());
+class _notesShoppingPageState extends State<notesShoppingPage> {
+  final shoppingController = Get.put(notesShoppingController());
 
   final cartController = Get.put(CartController());
 
@@ -31,16 +33,16 @@ class _ShoppingPageState extends State<ShoppingPage> {
         child: Column(
           children: [
             Expanded(
-              child: GetX<ShoppingController>(
+              child: GetX<notesShoppingController>(
                 builder: (controller) {
                   return ListView.builder(
-                    itemCount: controller.products.length,
+                    itemCount: controller.notesproducts.length,
                     itemBuilder: (context, index) {
                       return Container(
                           height: 200,
                           decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(30)),
+                              borderRadius: BorderRadius.circular(40)),
                           margin: EdgeInsets.all(15),
                           child: Padding(
                             padding: const EdgeInsets.only(top: 10.0, left: 10),
@@ -54,10 +56,10 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                       decoration: BoxDecoration(
                                           color: Color(0xfff2ecec),
                                           borderRadius:
-                                              BorderRadius.circular(30)),
+                                          BorderRadius.circular(40)),
                                       child: ClipRRect(
-                                           borderRadius: BorderRadius.circular(30),
-                                          child: Image.network('${controller.products[index].productImage}',fit: BoxFit.cover)),
+                                          borderRadius: BorderRadius.circular(40),
+                                          child: Image.network('${controller.notesproducts[index].productImage}',fit: BoxFit.cover)),
                                     )
                                   ],
                                 ),
@@ -65,10 +67,10 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                   padding: const EdgeInsets.all(10.0),
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                          '${controller.products[index].productName}',
+                                          '${controller.notesproducts[index].productName}',
                                           style: boldtext24),
                                       SizedBox(
                                         height: 5,
@@ -77,7 +79,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                         width: 180,
                                         height: 80,
                                         child: AutoSizeText(
-                                          '${controller.products[index].productDescription}',
+                                          '${controller.notesproducts[index].productDescription}',
                                           style: boldtextsmall,
                                           maxLines: 4,
                                         ),
@@ -89,23 +91,22 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                         width: 180,
                                         child: Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                          MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                                '₹ ${controller.products[index].price}',
+                                                '₹ ${controller.notesproducts[index].price}',
                                                 style: boldtext20),
                                             InkWell(
                                               onTap: () {
-                                                cartController.addToCart(
-                                                    controller.products[index]);
+
                                               },
                                               child: Container(
                                                   height: 40,
                                                   width: 80,
                                                   decoration: BoxDecoration(
                                                       borderRadius:
-                                                          BorderRadius.circular(
-                                                              40),
+                                                      BorderRadius.circular(
+                                                          40),
                                                       color: Acesnt_Color),
                                                   child: Center(
                                                     child: Text(
@@ -113,7 +114,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                                       style: GoogleFonts.alata(
                                                         //overflow: TextOverflow.ellipsis,
                                                         fontWeight:
-                                                            FontWeight.w500,
+                                                        FontWeight.w500,
                                                         color: Colors.white,
                                                         fontSize: 15,
                                                       ),

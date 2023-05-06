@@ -1,5 +1,7 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
+import 'package:tiedup/views/bookshopping_page.dart';
+import 'package:tiedup/views/notesshopping_page.dart';
 import 'package:tiedup/views/shopping_page.dart';
 import '../const/colors.dart';
 import '../const/text_styles.dart';
@@ -62,11 +64,11 @@ class _Home_screenState extends State<Home_screen> {
                           Center(
                             child: ShoppingPage(),
                           ),
-                          const Center(
-                            child: Icon(Icons.directions_bike),
+                          Center(
+                            child: bookShoppingPage(),
                           ),
-                          const Center(
-                            child: Icon(Icons.directions_car),
+                          Center(
+                            child: notesShoppingPage(),
                           ),
                           const Center(
                             child: Icon(Icons.directions_transit),
